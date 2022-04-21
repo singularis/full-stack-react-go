@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-basic
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: nginx-basic
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-basic
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-basic
+  template:
+    metadata:
+      labels:
+        app: nginx-basic
+    spec:
+      containers:
+      - name: nginx-basic
+        image: nginx:1.21
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "150m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
