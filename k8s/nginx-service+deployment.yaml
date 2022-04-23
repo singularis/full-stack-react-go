@@ -15,7 +15,7 @@ kind: Deployment
 metadata:
   name: nginx-basic
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-basic
@@ -24,15 +24,41 @@ spec:
       labels:
         app: nginx-basic
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: nginx
+                operator: In
+                values:
+                - server
       containers:
       - name: nginx-basic
         image: nginx:1.21
+        volumeMounts:
+        - mountPath: /var/www
+          name: wwww-folder
+        - mountPath: /etc/nginx
+          name: etc-folder
+        - mountPath: /etc/nginx/cert
+          name: etc-folder
         resources:
           requests:
             memory: "64Mi"
             cpu: "150m"
           limits:
-            memory: "128Mi"
+            memory: "1024Mi"
             cpu: "500m"
         ports:
         - containerPort: 80
+      volumes:
+      - name: wwww-folder
+        hostPath:
+          path: /root/full-stack-react-go/nginx-www
+      - name: etc-folder
+        hostPath:
+          path: /root/full-stack-react-go/nginx-etc
+      - name: cert-folder
+        hostPath:
+          path: /root/nginx-cert

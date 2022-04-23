@@ -18,5 +18,7 @@ Kubernetes
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
     helm install ingress-nginx ingress-nginx/ingress-nginx
-
+    Setup Domain name and LB
+    Setup HTTPS certificates
+2) Setup Node
 

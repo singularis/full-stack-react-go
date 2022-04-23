@@ -1,0 +1,31 @@
+server {
+    listen       80;
+    listen  [::]:80;
+    server_name  fullstack.singularis.work;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    server_name  fullstack.singularis.work;
+
+    ssl_certificate /etc/nginx/certs/ssl_certificate.crt;
+    ssl_certificate_key /etc/nginx/certs/ssl_certificate.key;
+
+    root /var/www;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~\.php$ {
+        include snippets/fastcgi-php.conf
+        fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+    }
+
+    location ~ /\.ht {
+        deny  all;
+    }
+}

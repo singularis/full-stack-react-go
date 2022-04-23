@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-  - host: dante.cloudns.ph		
+  - host: fullstack.singularis.work		
     http:
       paths:
       - pathType: Prefix
