@@ -15,4 +15,5 @@ RUN apt-get update && apt-get install -y \
   php-pear \
   npm \
   && rm -rf /var/lib/apt/lists/*
-
+RUN systemctl disable --now apache2
+RUN systemctl enable --now nginx
