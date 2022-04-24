@@ -22,4 +22,12 @@ Kubernetes
     Setup HTTPS certificates
     https://www.linode.com/docs/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/
 2) Setup Node
-
+    sudo apt install nodejs npm
+    cd parcel_blueprint
+    npm init -y
+    npm install --save parcel-bundler
+    npm install --save @babel/core
+    npm install --save @babel/plugin-proposal-class-properties
+    npm install --save @babel/plugin-transform-runtime
+    npm install --save react@next react-dom@next
+    npm install --save styled-components
