@@ -2,10 +2,22 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
+import {NavBar} from './NavBar';
+import { useNavDropMenu } from './Hooks/useNavDropMenu.js';
+import { NavDropMenu } from './NavDropMenu.js';
+
 function App () {
+    const ndm = useNavDropMenu();
+
+    const doLogOut = () => {
+        console.log ('log out func')
+    };
+
     return (
         <>
-            <span>Hello Diego</span>
+            <NavBar {...ndm}/>
+            <NavDropMenu {...ndm} doLogOut={doLogOut}  />
+
         </>
     )
 }

@@ -117,7 +117,26 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/react/cjs/react.development.js":[function(require,module,exports) {
+})({"../node_modules/@babel/runtime/helpers/extends.js":[function(require,module,exports) {
+function _extends() {
+  module.exports = _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  }, module.exports.__esModule = true, module.exports["default"] = module.exports;
+  return _extends.apply(this, arguments);
+}
+
+module.exports = _extends, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../node_modules/react/cjs/react.development.js":[function(require,module,exports) {
 /**
  * @license React
  * react.development.js
@@ -35330,8 +35349,315 @@ exports.ServerStyleSheet = Je;
 "production" !== "development" && "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "production" !== "development" && "test" !== "development" && "undefined" != typeof window && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
 var _default = He;
 exports.default = _default;
-},{"react-is":"../node_modules/react-is/index.js","react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","@emotion/stylis":"../node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.browser.esm.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../node_modules/process/browser.js"}],"Components/App.js":[function(require,module,exports) {
+},{"react-is":"../node_modules/react-is/index.js","react":"../node_modules/react/index.js","shallowequal":"../node_modules/shallowequal/index.js","@emotion/stylis":"../node_modules/@emotion/stylis/dist/stylis.browser.esm.js","@emotion/unitless":"../node_modules/@emotion/unitless/dist/unitless.browser.esm.js","@emotion/is-prop-valid":"../node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.browser.esm.js","hoist-non-react-statics":"../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js","process":"../node_modules/process/browser.js"}],"../node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js":[function(require,module,exports) {
+function _taggedTemplateLiteral(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  return Object.freeze(Object.defineProperties(strings, {
+    raw: {
+      value: Object.freeze(raw)
+    }
+  }));
+}
+
+module.exports = _taggedTemplateLiteral, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"Components/Button.js":[function(require,module,exports) {
 "use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Button = Button;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StyledButton = _styledComponents.default.div(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2.default)(["\n\tborder-radius: .2rem;\n\t\n\tfont-size: 1.5rem;\n\t\n\tcolor: #686f7a;\n\tborder: 1px solid #686f7a;\n\t\n\tpadding-left: 1.5rem;\n\tpadding-right: 1.5rem;\n\tmargin-left: .5rem;\n\t\n\t", "\n\t\n\t", "\t\n\t\n\t", "\t\t\n\n\t", "\t\n\t\n\t", "\t\t\n"])), function (_ref) {
+  var btype = _ref.btype;
+  return btype == "white" && "\n\t\t&:hover {\n\t\t\tcursor: pointer;\n\t\t\tcolor: #29303b;\n\t\t\tborder-color: #29303b;\n\t\t}\n\t";
+}, function (_ref2) {
+  var btype = _ref2.btype;
+  return btype == "red" && "\n\t\tcolor: #fff;\n\t\tbackground-color: #ec5252;\n\t\tborder: 1px solid transparent;    \n\t\t\n\t\t&:hover {\n\t\t\tcolor: #fff;\n\t\t\tbackground-color: #992337;\n\t\t\tborder-color: transparent;\n\t\t\tcursor: pointer;\n\t\t}\t\n\t";
+}, function (_ref3) {
+  var btype = _ref3.btype;
+  return btype == "grey" && "\n\t\tcolor: #505763;\n\t\tborder-radius: 3px;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid transparent;    \n\t\t\n\t\t&:hover {\n\t\t\tbackground-color: rgba(20,23,28,.05);\n\t\t\tborder-color: transparent;\n\t\t\tcursor: pointer;\n\t\t\tborder: 1px solid rgba(20,23,28,.05);  \n\t\t}\t\n\t";
+}, function (_ref4) {
+  var btype = _ref4.btype;
+  return btype == "blue" && "\n\t\tcolor: #007791;\n\t\tborder-radius: 3px;\n\t\tbackground-color: #fff;\n\t\tborder: 1px solid #007791;\n\t\t\t\t\n\t\t&:hover {\n\t\t\tcolor: #003440;\n\t\t    background-color: #fff;\n\t\t    border-color: #003440;\n\t\t}\t\n\t";
+}, function (_ref5) {
+  var btype = _ref5.btype,
+      svgIcon = _ref5.svgIcon;
+  return btype == "icon-btn" && "\n\t\tdiplay: flex;\n\t\tborder: 0px;\n\t\t& .icon-btn-icon {\n\t\t\tposition: relative;\n\t\t\tdisplay: inline-block;\n\t\t\twidth: 2rem;\n\t\t\theight: 2rem;\n\t\t\tlineHeight: 2rem;\n\t\t\tbackground: #ccc;\n\t\t\tmask:  url(".concat(svgIcon, ") no-repeat center;\n\t\t\ttop: 4px;\n\t\t}\n\t\t\n\t\t&:hover {\n\t\t\tcursor:pointer;\n\t\t}\t\t\n\t");
+});
+
+function Button(_ref6) {
+  var btype = _ref6.btype,
+      text = _ref6.text,
+      onClick = _ref6.onClick,
+      svgIcon = _ref6.svgIcon,
+      onMouseEnter = _ref6.onMouseEnter;
+  return /*#__PURE__*/_react.default.createElement(StyledButton, {
+    btype: btype,
+    onClick: onClick,
+    svgIcon: svgIcon,
+    onMouseEnter: onMouseEnter
+  }, svgIcon && svgIcon !== "" && /*#__PURE__*/_react.default.createElement("span", {
+    className: "icon-btn-icon"
+  }), /*#__PURE__*/_react.default.createElement("span", null, " ", text));
+}
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"../node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"Components/NavBar.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NavBar = NavBar;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _Button = require("./Button.js");
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StyledNavBar = _styledComponents.default.div(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2.default)(["\n    position fixed;\n    top: 0px;\n    left: 0 px;\n\n    width: 100vw; \n    height: 6rem;\n\n    box-shadow: 0 0 1px 1px rgba(20,23,28,.1),0 3px 1px 0 rgba(20,23,28,.1);\n\tfont-size: 2rem;\n\tcolor: #505763;\n\tbackground: #fff;\n    font-family: 'Raleway-Bold';\n\n        & #styled-navbar-content {\n        position: relative;\n\t\twidth: 2000px;\n\t\tmargin: 0 auto;\n\t\tpadding: 1rem;\n\t\tline-height: 4.5rem;\n\t\t\n\t\tdisplay: flex;\n\n        & #styled-navbar-content-icon {\n            width: 4.5rem;\n\t\t\theight: 4.5rem;\n\t\t\tbackground: rgb(236, 82, 82);\n\t\t\tmask: ", ")\t\t\n        }\n\n        & #styled-navbar-content-title {\n\t\t\tmargin-left: 1rem;\n\t\t\tmargin-right: 1.5rem;\t\n        }\n\n        & input[type='text'] {\n            color: #686f7a;\n            background: #f2f3f5;\n            border: 0px solid transparent !important;\n            border-top-left-radius: 2px;\n            border-bottom-left-radius: 2px;\n            \n            width: 46rem;\n            margin-left: 3rem;\n            text-indent: 1.5rem;\n        }\n\n        & #styled-navbar-content-input-submit {\n            width: 4.5rem;\n            height: 4.7rem;\n            border-top-right-radius: 2px;\n            border-bottom-right-radius: 2px;\n            background: #f2f3f5;\n        }\n\n        & #styled-navbar-content-input-submit:hover {\n            cursor:pointer;\n            background: rgb(236, 82, 82);\n        }\n\n        & #styled-navbar-content-input-submit:hover svg {\n            fill: #fff;\n        }\n\n        & #styled-navbar-content-input-submit svg {\n            width: 3rem;\n            height: 3rem;\n            fill: rgb(236, 82, 82);\n            position: relative;\n            left: 50%;\n            top: 50%;\n            transform: translate(-50%,-50%);\n        }\n\n        & .styled-navbar-vertical-divider {\n            margin-left: 1.5rem;\n            margin-right: 1.5rem; \n            border-left: 1px solid #dedfe0;\n        }\n    }\n"])), function (props) {
+  return " url( ".concat(props.svgIcon, ") no-repeat center;");
+});
+
+function NavBar(setNavDropMenuPosX, setNavDropMenuType) {
+  var getNavPosition = function getNavPosition(e, type, adjust) {
+    console.log("I got called.");
+    console.log(e.target);
+    var rect = e.target.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var abstop = rect.top + scrollTop;
+    var absleft = rect.left + scrollLeft;
+    console.log(rect.top + scrollTop, rect.left + scrollLeft); //absolute left of element -menu width + elment width to right sid eright aligned
+
+    adjust ? setNavDropMenuPosX(absleft + 300 + e.target.offsetWidth) : setNavDropMenuPosX(absleft);
+    setNavDropMenuType(type);
+  };
+
+  return /*#__PURE__*/_react.default.createElement(StyledNavBar, {
+    svgIcon: "/icons/16px/code.svg"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    id: "styled-navbar-content"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    id: "styled-navbar-content-icon"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    id: "styled-navbar-content-title"
+  }, "Dante explorer"), /*#__PURE__*/_react.default.createElement(_Button.Button, {
+    text: "Resources",
+    btype: "icon-btn",
+    svgIcon: "/icons/20px/box.svg",
+    onMouseEnter: function onMouseEnter(e) {
+      e.stopPropagation();
+      getNavPosition(e, 'resources', false);
+    }
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    id: "styled-navbar-content-input-submit"
+  }, /*#__PURE__*/_react.default.createElement("svg", {
+    focusable: "false",
+    viewBox: "0 0 24 24"
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+  }), /*#__PURE__*/_react.default.createElement("path", {
+    fill: "none",
+    d: "M0 0h24v24H0z"
+  }))), /*#__PURE__*/_react.default.createElement(_Button.Button, {
+    text: "GitHub",
+    btype: "grey"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "styled-navbar-vertical-divider"
+  }), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_Button.Button, {
+    text: "Log In",
+    btype: "white"
+  }), /*#__PURE__*/_react.default.createElement(_Button.Button, {
+    text: "Sign Up",
+    btype: "red"
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    id: "styled-navbar-profile-icon"
+  })));
+}
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"../node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Button.js":"Components/Button.js"}],"../node_modules/@babel/runtime/helpers/arrayWithHoles.js":[function(require,module,exports) {
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js":[function(require,module,exports) {
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../node_modules/@babel/runtime/helpers/arrayLikeToArray.js":[function(require,module,exports) {
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":[function(require,module,exports) {
+var arrayLikeToArray = require("./arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayLikeToArray.js":"../node_modules/@babel/runtime/helpers/arrayLikeToArray.js"}],"../node_modules/@babel/runtime/helpers/nonIterableRest.js":[function(require,module,exports) {
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"../node_modules/@babel/runtime/helpers/slicedToArray.js":[function(require,module,exports) {
+var arrayWithHoles = require("./arrayWithHoles.js");
+
+var iterableToArrayLimit = require("./iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
+
+var nonIterableRest = require("./nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithHoles.js":"../node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit.js":"../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray.js":"../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest.js":"../node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"Components/Hooks/useNavDropMenu.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useNavDropMenu = useNavDropMenu;
+
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _react = require("react");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function useNavDropMenu() {
+  var _useState = (0, _react.useState)(-320),
+      _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+      navDropMenuPosX = _useState2[0],
+      setNavDropMenuPosX = _useState2[1];
+
+  var _useState3 = (0, _react.useState)(''),
+      _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+      navDropMenuType = _useState4[0],
+      setNavDropMenuType = _useState4[1];
+
+  return {
+    navDropMenuPosX: navDropMenuPosX,
+    setNavDropMenuPosX: setNavDropMenuPosX,
+    navDropMenuType: navDropMenuType,
+    setNavDropMenuType: setNavDropMenuType
+  };
+}
+},{"@babel/runtime/helpers/slicedToArray":"../node_modules/@babel/runtime/helpers/slicedToArray.js","react":"../node_modules/react/index.js"}],"Components/NavDropMenu.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.NavDropMenu = NavDropMenu;
+
+var _taggedTemplateLiteral2 = _interopRequireDefault(require("@babel/runtime/helpers/taggedTemplateLiteral"));
+
+var _react = _interopRequireDefault(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var StyledNavDropMenu = _styledComponents.default.div(_templateObject || (_templateObject = (0, _taggedTemplateLiteral2.default)(["\nposition: fixed;\nz-index: 4;\ntop: 6.5rem;\nleft: ", ";\n\n\n\nmin-width: 30rem;\nmin-height: 10rem;\n\nborder: none;\nborder-bottom-left-radius: 2px;\nborder-bottom-right-radius: 2px;\nborder-top: 1px solid #e8e9eb;\nbox-shadow: 0 4px 16px rgba(20,23,28,.25);\ncolor: #505763;\nfont-size: 13px;\nbackground: #fff;\npadding: 15px 0 15px 0;\n&:after {\n\tleft: auto;\n\tright: 12px;\n\t", "\n\t\n\tborder-color: transparent transparent #fff transparent;\n\ttop: -12px;\n\tbox-sizing: border-box;\n\tborder-style: solid;\n\tborder-width: 0 10px 13px;\n\tcontent: '' !important;\n\theight: 0;\n\tposition: absolute;\n\twidth: 0;\n}\n\n& .text-link-item {\n\theight: 4.2rem;\n\tcolor: #007791;\n\tfont-size: 1.5rem;\n\tfont-weight: 600;\n\tpadding: 10px 22px;\n\twidth: 100%;\n\tposition: relative;\n\tline-height: 2.2rem;\n}\n& .text-link-item:hover {\n\tbackground: #f2f3f5;\n\tcursor:pointer;\n}\n\n& .icon-text-link-item {\n\twidth: 100%;\n\tcolor: #007791;\n\tfont-size: 1.5rem;\n\tfont-weight: 400;\n\tdisplay:flex;\n\tpadding: 5px 15px;\n\tflex-direction: row;\n\talign-items: center;\n}\n& .icon-text-link-item:hover {\n\tbackground: #f2f3f5;\n\tcursor:pointer;\n}\t\n"])), function (props) {
+  return "".concat(props.ndmpx, "px") || '100px';
+}, function (_ref) {
+  var navDropMenuType = _ref.navDropMenuType;
+  return navDropMenuType == "resources" && "\n\t\tleft: 12px;\n\t";
+});
+
+function NavDropMenu(_ref2) {
+  var jsonData = _ref2.jsonData,
+      navDropMenuPosX = _ref2.navDropMenuPosX,
+      navDropMenuType = _ref2.navDropMenuType;
+  return /*#__PURE__*/_react.default.createElement(StyledNavDropMenu, {
+    ndmpx: navDropMenuPosX,
+    navDropMenuType: navDropMenuType
+  }, jsonData != null && jsonData.elements.map(function (el) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: el.type,
+      onClick: function onClick(e) {
+        return doAction(el.action);
+      }
+    }, /*#__PURE__*/_react.default.createElement(DynamicIcon, {
+      svgIconUrl: "/icons/20px/".concat(el.icon, ".svg")
+    }), el.text);
+  }));
+}
+},{"@babel/runtime/helpers/taggedTemplateLiteral":"../node_modules/@babel/runtime/helpers/taggedTemplateLiteral.js","react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"Components/App.js":[function(require,module,exports) {
+"use strict";
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -35339,20 +35665,34 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _NavBar = require("./NavBar");
+
+var _useNavDropMenu = require("./Hooks/useNavDropMenu.js");
+
+var _NavDropMenu = require("./NavDropMenu.js");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function App() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("span", null, "Hello Diego"));
+  var ndm = (0, _useNavDropMenu.useNavDropMenu)();
+
+  var doLogOut = function doLogOut() {
+    console.log('log out func');
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_NavBar.NavBar, ndm), /*#__PURE__*/_react.default.createElement(_NavDropMenu.NavDropMenu, (0, _extends2.default)({}, ndm, {
+    doLogOut: doLogOut
+  })));
 }
 
 if (document.getElementById('react_root')) {
   _reactDom.default.render( /*#__PURE__*/_react.default.createElement(App, null), document.getElementById('react_root'));
 }
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"@babel/runtime/helpers/extends":"../node_modules/@babel/runtime/helpers/extends.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./NavBar":"Components/NavBar.js","./Hooks/useNavDropMenu.js":"Components/Hooks/useNavDropMenu.js","./NavDropMenu.js":"Components/NavDropMenu.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
