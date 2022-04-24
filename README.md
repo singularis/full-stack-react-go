@@ -20,5 +20,6 @@ Kubernetes
     helm install ingress-nginx ingress-nginx/ingress-nginx
     Setup Domain name and LB
     Setup HTTPS certificates
+    https://www.linode.com/docs/guides/enabling-https-using-certbot-with-nginx-on-ubuntu/
 2) Setup Node
 
