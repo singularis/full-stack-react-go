@@ -71,9 +71,9 @@ padding: 15px 0 15px 0;
 `;
 
 
-export function NavDropMenu({jsonData, navDropMenuPosX, navDropMenuType}) {
+export function NavDropMenu({jsonData, setNavDropMenuPosX, navDropMenuType}) {
     return (
-		<StyledNavDropMenu ndmpx={navDropMenuPosX} navDropMenuType={navDropMenuType}>						
+		<StyledNavDropMenu ndmpx={setNavDropMenuPosX} navDropMenuType={navDropMenuType}>						
 			{ jsonData != null && jsonData.elements.map((el) =>				
 				<div className={el.type} onClick={(e) => doAction(el.action)}><DynamicIcon svgIconUrl={`/icons/20px/${el.icon}.svg`} />{ el.text }</div>				
 			)}

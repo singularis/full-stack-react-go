@@ -85,13 +85,12 @@ const StyledNavBar = styled.div `
 
 import { Button } from './Button.js';
 
-export function NavBar( setNavDropMenuPosX, setNavDropMenuType  ){
-
-    const getNavPosition = (e, type, adjust) => {	    
+export function NavBar({ setNavDropMenuPosX, setNavDropMenuType, modalShowing, setModalShowing, setModalDisplay, loading, validjwt }) {
+	
+	const getNavPosition = (e, type, adjust) => {	    
 	    console.log("I got called.");
 	    console.log(e.target);
 	    
-        
 	    var rect = e.target.getBoundingClientRect(),
 	    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
 	    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -102,10 +101,11 @@ export function NavBar( setNavDropMenuPosX, setNavDropMenuType  ){
 
 		//absolute left of element -menu width + elment width to right sid eright aligned
 		
-		(adjust) ? setNavDropMenuPosX((absleft + 300) + e.target.offsetWidth) : setNavDropMenuPosX(absleft);
+		(adjust) ? setNavDropMenuPosX((absleft - 300) + e.target.offsetWidth) : setNavDropMenuPosX(absleft);
 		
 		setNavDropMenuType(type);
-	}
+	}	
+	
 
     return(
         <StyledNavBar svgIcon="/icons/16px/code.svg"> 
@@ -113,7 +113,7 @@ export function NavBar( setNavDropMenuPosX, setNavDropMenuType  ){
                 <div id="styled-navbar-content-icon"></div>
 				<div id="styled-navbar-content-title">Dante explorer</div>
 
-                <Button text="Resources" btype="icon-btn" svgIcon="/icons/20px/box.svg" onMouseEnter={ (e) => { e.stopPropagation(); getNavPosition(e, 'resources', false); }} />	
+                <Button text="Contacts" btype="icon-btn" svgIcon="/icons/20px/linkedin-svgrepo-com.svg" onMouseEnter={ (e) => { e.stopPropagation(); getNavPosition(e, 'resources', false); }} />	
                 <input type="text" />
 				<div id="styled-navbar-content-input-submit">
 					<svg  focusable="false" viewBox="0 0 24 24">
@@ -124,8 +124,8 @@ export function NavBar( setNavDropMenuPosX, setNavDropMenuType  ){
                 <Button text="GitHub"  btype="grey" />
 				<div className="styled-navbar-vertical-divider"></div>
                 <>
-					<Button text="Log In"  btype="white" />
-					<Button text="Sign Up" btype="red" />
+					<Button text="Log In"  btype="white" onClick={(e) => {  setModalShowing(true); setModalDisplay('login');  }} />
+					<Button text="Sign Up" btype="red"  onClick={(e) => {   setModalShowing(true); setModalDisplay('signup'); }} />
 				</>
                 <div id="styled-navbar-profile-icon" ></div>	
             </div>
