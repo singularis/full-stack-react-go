@@ -31,3 +31,6 @@ Kubernetes
     npm install --save @babel/plugin-transform-runtime
     npm install --save react@next react-dom@next
     npm install --save styled-components
+3) Install mongoDB
+    Setup user and admin users
+    Add auth
