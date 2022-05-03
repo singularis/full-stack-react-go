@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html --host server.singularis.work --https --cert /etc/letsencrypt/live/server.singularis.work/fullchain.pem --key /etc/letsencrypt/live/server.singularis.work/privkey.pem --hmr-hostname server.singularis.work --hmr-port 5000 --no-autoinstall --no-source-maps",
+    "start": "parcel src/index.html --host server.singularis.work/dist/ --https --cert /etc/letsencrypt/live/server.singularis.work/fullchain.pem --key /etc/letsencrypt/live/server.singularis.work/privkey.pem --hmr-hostname server.singularis.work/dist/ --hmr-port 5000 --no-autoinstall --no-source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

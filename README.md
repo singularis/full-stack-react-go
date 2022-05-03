@@ -34,3 +34,4 @@ Kubernetes
 3) Install mongoDB
     Setup user and admin users
     Add auth
+4) Install Golang
